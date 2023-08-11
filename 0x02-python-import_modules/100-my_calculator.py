@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 
+if __name__ == "__main__":
+    """Handle basic arithmetic operations."""
+    from calculator_1 import add, sub, mul, div 
+    import sys
 
-def magic_calculation(a, b):
-    """Match bytecode provided by Holberton School."""
-    from magic_calculation_102 import add, sub
+    if len(sys.argv) - 1 != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
 
-    if a < b:
-        c = add(a, b)
-        for i in range(4, 6):
-            c = add(c, i)
-        return (c)
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
+    if sys.argv[2] not in list(ops.keys()):
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
-    else:
-return(sub(a, b))
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))

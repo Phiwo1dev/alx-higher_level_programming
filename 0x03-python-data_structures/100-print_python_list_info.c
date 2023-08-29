@@ -1,4 +1,6 @@
 #include <Python.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_python_list_info - A function that prints basic info

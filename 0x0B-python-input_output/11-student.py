@@ -3,10 +3,10 @@
 
 
 class Student:
-    """Represent a student."""
+    """Represents a student."""
 
     def __init__(self, first_name, last_name, age):
-        """Initialize a new Student.
+        """Initializes a new Student.
 
         Args:
             first_name (str): The first name of the student.
@@ -39,4 +39,3 @@ class Student:
         """
         for k, v in json.items():
             setattr(self, k, v)
-
